@@ -2,13 +2,13 @@ push!(LOAD_PATH, ".")
 ########################################
 # Leitura dos argumentos e da instancia
 ########################################
-println("Hello, World!")
 
 include("scpInstance.jl") #scpInstance contém a estrutura de dados da instância
 include("construtivos.jl")
 
 # import from the data folder
-instance_file = "data/IGC1.txt" # instance_file recebe o nome do arquivo da instancia
+
+instance_file = "Tarefa 2/data/scp51.txt" # instance_file recebe o nome do arquivo da instancia
 cod_metodo = 1
 
 
@@ -25,7 +25,7 @@ startt = time() #inicia o contador de tempo
 if(cod_metodo==0)
    S, cost, v_cobertura = constByCost(instance) # chama o metodo construtivo "constByCost"
 else
-   outroConst(instance) # chama o outro metodo contrutivo
+   S, cost, v_cobertura = outroConst(instance) # chama o outro metodo contrutivo
 end
 
 

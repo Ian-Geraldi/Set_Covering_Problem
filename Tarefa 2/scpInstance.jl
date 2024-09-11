@@ -2,6 +2,7 @@ struct scpInstance #<: AbstractInstance
     num_lin::Int64 #Number of lines
     num_col::Int64  #Number of columns
     v_cost::Array{Int64}#Vector of costs
+    v_covered::Array{Int64}#Vector of how many are covered
     m_coverage::Array{Int64,2}#Matrix of coverage
     
 

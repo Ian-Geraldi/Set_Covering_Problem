@@ -31,17 +31,40 @@ end
 
 function outroConst(instance::scpInstance)
     covered = zeros(Int64, instance.num_lin)
+    covered_total = 0
     solution = zeros(Int64, instance.num_col)
     cost = 0
     while sum(covered) < instance.num_lin
-        coluna = findmin(instance.v_cost)[2]
-        solution[coluna] = 1
-        cost += instance.v_cost[coluna]
-        for linha = 1:instance.num_lin
-            covered[linha] += instance.m_coverage[linha, coluna]
+        col = calculateCost(instance)
+        solution[col] = 1
+        cost += instance.v_cost[col]
+
+        for lin = 1:instance.num_lin
+            if instance.m_coverage[lin,col] == 1
+                for col = 1:instance.num_col
+                    instance.m_coverage[lin,col] = 0
+                end
+                instance.m_coverage[lin,col] = 0
+                covered[lin] = 1
+                covered_total += 1
+            end
         end
-        instance.v_cost[coluna] = 0
+        println("Covered total: ", covered_total)
     end
+    return solution, cost, covered
 end
 
-
+function calculateCost(instance:: scpInstance)
+    coverage = zeros(Float64,instance.num_col)
+    for col = 1:instance.num_col
+        num_covered = 0
+        for lin = 1:instance.num_lin
+            if instance.m_coverage[lin,col] == 1
+                num_covered += 1
+            end
+        end
+        coverage[col] = num_covered/instance.v_cost[col]
+    end
+    max_value, index = findmax(coverage)
+    return index
+end
