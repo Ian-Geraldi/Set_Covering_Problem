@@ -1,23 +1,15 @@
 push!(LOAD_PATH, ".")
-# function julia {C:\Users\pessoa\AppData\Local\Julia-1.0.5\bin\julia.exe $args}
-# julia main.jl data\scp41.txt 0
-# & 'C:\Users\Luciana Pessoa\AppData\Local\Programs\Julia\Julia-1.4.0\bin\julia.exe' main.jl data\scp41.txt 0
-
 ########################################
 # Leitura dos argumentos e da instancia
 ########################################
-
+println("Hello, World!")
 
 include("scpInstance.jl") #scpInstance contém a estrutura de dados da instância
 include("construtivos.jl")
 
-if length(ARGS) < 2
-    println("Usage: julia main.jl <scp-instance-file> <cod-metodo>") #print mensagem de erro caso o numero de parametros nao esteja correto
-    exit(1)
-end
-
-instance_file = ARGS[1] # instance_file recebe o nome do arquivo da instancia
-cod_metodo = parse(Int64, ARGS[2])
+# import from the data folder
+instance_file = "data/IGC1.txt" # instance_file recebe o nome do arquivo da instancia
+cod_metodo = 1
 
 
 instance = scpInstance(instance_file) #instancia recebe os dados lidos pelo construtor scpInstance
