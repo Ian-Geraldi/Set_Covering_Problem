@@ -41,8 +41,11 @@ function outroConst(instance::scpInstance)
 
         for lin = 1:instance.num_lin
             if instance.m_coverage[lin,col] == 1
-                for col = 1:instance.num_col
-                    instance.m_coverage[lin,col] = 0
+                for c = 1:instance.num_col
+                    if instance.m_coverage[lin,c] == 1
+                        instance.m_coverage[lin,c] = 0
+                        instance.v_num_covered[c] -= 1
+                    end
                 end
                 instance.m_coverage[lin,col] = 0
                 covered[lin] = 1
@@ -57,13 +60,7 @@ end
 function calculateCost(instance:: scpInstance)
     coverage = zeros(Float64,instance.num_col)
     for col = 1:instance.num_col
-        num_covered = 0
-        for lin = 1:instance.num_lin
-            if instance.m_coverage[lin,col] == 1
-                num_covered += 1
-            end
-        end
-        coverage[col] = num_covered/instance.v_cost[col]
+        coverage[col] = instance.v_num_covered[col]/instance.v_cost[col]
     end
     max_value, index = findmax(coverage)
     return index

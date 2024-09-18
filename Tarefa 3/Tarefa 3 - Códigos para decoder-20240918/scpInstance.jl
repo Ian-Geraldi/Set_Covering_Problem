@@ -3,7 +3,7 @@ struct scpInstance #<: AbstractInstance
     num_col::Int64  #Number of columns
     v_cost::Array{Int64}#Vector of costs
     m_coverage::Array{Int64,2}#Matrix of coverage
-    v_num_covered::Array{Int64}#Vector of how many are covered
+    
 
     function scpInstance(filename::String)
 
@@ -19,10 +19,6 @@ struct scpInstance #<: AbstractInstance
         
                                 
         v_cost = Array{Int64,1}(undef,num_col)
-        v_num_covered = Array{Int64,1}(undef,num_col)
-        for i = 1:num_col
-            v_num_covered[i]=0
-        end
         for j = 1:num_col
             v_cost[j]=parse(Int64, values[j+2])
         end  
@@ -39,7 +35,6 @@ struct scpInstance #<: AbstractInstance
                 v=v+1
                 j = parse(Int64, values[v])
                 m_coverage[i,j]=1
-                v_num_covered[j]+=1
             end
                 #println(m_distances[i,:])
         end
@@ -48,7 +43,7 @@ struct scpInstance #<: AbstractInstance
             
         #println(m_distances[:,:])
 
-        new(num_lin, num_col, v_cost, m_coverage, v_num_covered)
+        new(num_lin, num_col, v_cost, m_coverage)
     end
 end
 
