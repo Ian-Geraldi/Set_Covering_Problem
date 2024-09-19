@@ -8,7 +8,7 @@ include("construtivos.jl")
 
 # import from the data folder
 
-instance_file = "Tarefa 2/data/scpb2.txt" # instance_file recebe o nome do arquivo da instancia
+instance_file = "Tarefa 2/data/IGC1.txt" # instance_file recebe o nome do arquivo da instancia
 cod_metodo = 1
 
 

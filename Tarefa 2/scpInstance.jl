@@ -32,6 +32,7 @@ struct scpInstance #<: AbstractInstance
         m_coverage = zeros(Int64, num_lin, num_col)
 
         for i = 1:num_lin
+            println("Building the instance... $(i)/$(num_lin) lines done")
             v=v+1
             cl = parse(Int64, values[v])
 
@@ -53,5 +54,3 @@ struct scpInstance #<: AbstractInstance
 end
 
 ################################################################################
-
-
