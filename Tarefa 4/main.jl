@@ -47,14 +47,11 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
 
       startt = time() #inicia o contador de tempo
 
-      if(cod_metodo == 1)
+      if cod_metodo == 1
          S, cost, v_cobertura = constDeterministico(instance)
-
-      elseif(cod_metodo == 2)
+      elseif cod_metodo == 2
          S, cost, v_cobertura = constDeterministicoBL(instance)
-
-
-      elseif(cod_metodo == 3)
+      elseif cod_metodo == 3
          seed = rand(UInt64) # generate a random seed
          using Random
          # write the seed in a txt file
@@ -67,7 +64,7 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
          chrms = rand(instance.num_col)   # cria o vetor de chaves aleatorias
          S, cost, v_cobertura = randomConst(instance, chrms) # chama o construtivo aleatorio
 
-      elseif(cod_metodo == 4)
+      elseif cod_metodo == 4
          seed = rand(UInt64) # generate a random seed
          using Random
          # write the seed in a txt file
@@ -79,6 +76,7 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
          Random.seed!(seed)  # define a seed aleatoria
          chrms = rand(instance.num_col)   # cria o vetor de chaves aleatorias
          S, cost, v_cobertura = randomConstBL(instance, chrms) # chama o construtivo aleatorio
+      end
 
 
       totaltime =  time() - startt  #encerra o contador de tempo
@@ -111,4 +109,3 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
    end
 
    end
-end
