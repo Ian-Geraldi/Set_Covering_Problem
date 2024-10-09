@@ -1,0 +1,47 @@
+1) Introdução 
+
+- Definição do problema 
+- Modelo matemático
+
+2) Métodos propostos
+
+Descrever cada método novo implementado (Escrever algoritmo ou lista de passos textualmente)
+- Construtivo determinístico (da Tarefa 2)
+- Construtivo aleatorizado (decoder da Tarefa 3) 
+- Busca local (da Tarefa 4)
+
+3) Experimentos
+
+- Utilizar as instâncias scp41, scp42 scp51 scp52 scp61 scp62 scpa1 scpa2 scpb1 scpb2 scpc1 scpc2 scpd1 scpd2
+- Gerar tabelas detalhadas a apresentadas como anexo ao final do relatório.
+- Rodar todos os experimentos na mesma máquina
+
+E1) Solver rodando modelo matemático (CBC, Gurobi, Cplex, ...). Especificar qual solver e versão foram utilizados
+E2) Construtivo determinístico. Registrar custo e tempo
+E3) Construtivo aleatorizado (Rodar 5 sementes diferentes). Registrar melhor e pior custo e custo médio. Registrar tempo médio.
+E4) Construtivo determinístico + busca local. Registrar custo e tempo.
+E5) Construtivo aleatorizado + busca local (Rodar 5 sementes diferentes). Registrar melhor e pior custo e custo médio. Registrar tempo médio.
+E6) BRKGA
+E6a) Sem busca local
+E6b) Com busca local
+Rodar 5 sementes diferentes
+Parametrização: 
+Seis versões do BRKGA devem ser avaliadas como proposto por Noronha et al. (2011), com valores diferentes para o tamanho da população e o número de cromossomos nos conjuntos TOP, REST e BOT. Não é necessário usar os mesmos valores definidos naquele artigo. 
+Critério de parada: 
+O tempo de execução será o critério de parada. Definir 3 tempos de parada (1 min, 5 min, 10 min). 
+
+4) Análises comparativas
+
+- Resumo em tabelas apresentando, para cada instância, o desvio porcentual das soluções melhor e média obtidas em cada experimento com relação à solução ótima.
+- Visualização dos resultados através de gráficos boxplot (consolidação de todas as instâncias) e tttplot (2 instâncias).
+
+5) Conclusão 
+
+
+
+
+
+
+
+
+

@@ -8,18 +8,34 @@ using Statistics
 ########################################
 # Leitura dos argumentos e da instancia
 ########################################
-
+if length(ARGS) < 2
+   println("Faltam argumentos. Formato: [cod_metodo, iterações]") #print mensagem de erro caso o numero de parametros nao esteja correto
+   exit(1)
+end
 
 include("scpInstance.jl") #scpInstance contém a estrutura de dados da instância
 include("construtivos.jl")
-instance_names = ["IGC1"]
-iterations = 10
+instance_names = ["scp41", "scp42", "scp51", "scp52", "scp61", "scp62", "scpa1", "scpa2", "scpb1", "scpb2", "scpc1", "scpc2", "scpd1", "scpd2"]
+cod_metodo = ARGS[1]
+iterations = ARGS[2]
+if cod_metodo == 1
+   pastaResultados = "Construtivo Determinístico"
+end
+if cod_metodo == 2
+   pastaResultados = "Construtivo Determinístico + BL"
+end
+if cod_metodo == 3
+   pastaResultados = "Construtivo Aleatório"
+end
+if cod_metodo == 4
+   pastaResultados = "Construtivo Aleatório + BL"
+end
+
 for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_names
    costs = []
    times = []
    for i = 1:iterations
-      instance_file = "Tarefa 3/data/$(instance_name).txt" # instance_file recebe o nome do arquivo da instancia
-      cod_metodo = 2
+      instance_file = "data/$(instance_name).txt" # instance_file recebe o nome do arquivo da instancia
 
       instance = scpInstance(instance_file) #instancia recebe os dados lidos pelo construtor scpInstance
       println("Instancia lida") #imprime a mensagem de que a instancia foi lida
@@ -31,11 +47,14 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
 
       startt = time() #inicia o contador de tempo
 
-      if(cod_metodo==0)
-         S, cost, v_cobertura = constByCost(instance) # chama o metodo construtivo "constByCost"
-      elseif(cod_metodo == 1)
-         S, cost, v_cobertura = outroConst(instance) # chama o outro metodo contrutivo
-      else 
+      if(cod_metodo == 1)
+         S, cost, v_cobertura = constDeterministico(instance)
+
+      elseif(cod_metodo == 2)
+         S, cost, v_cobertura = constDeterministicoBL(instance)
+
+
+      elseif(cod_metodo == 3)
          seed = rand(UInt64) # generate a random seed
          using Random
          # write the seed in a txt file
@@ -47,23 +66,36 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
          Random.seed!(seed)  # define a seed aleatoria
          chrms = rand(instance.num_col)   # cria o vetor de chaves aleatorias
          S, cost, v_cobertura = randomConst(instance, chrms) # chama o construtivo aleatorio
-      end
+
+      elseif(cod_metodo == 4)
+         seed = rand(UInt64) # generate a random seed
+         using Random
+         # write the seed in a txt file
+         seed_file = "Seeds/$(instance_name) $(Dates.format(now(), "mm-dd_HH-MM-SS")).txt"
+         open(seed_file, "w") do file
+            write(file, string(seed))
+         end
+
+         Random.seed!(seed)  # define a seed aleatoria
+         chrms = rand(instance.num_col)   # cria o vetor de chaves aleatorias
+         S, cost, v_cobertura = randomConstBL(instance, chrms) # chama o construtivo aleatorio
+
 
       totaltime =  time() - startt  #encerra o contador de tempo
       tround = round(totaltime,digits=2)
 
       println("Tempo:  $tround") #imprime o tempo
       push!(times, tround)
-      println("Custo $cost") #imprime o custo e a solucao
+      println("Custo $cost")
       push!(costs, cost)
-      println("Solucao $S)") #imprime o custo e a solucao
       #write the cost in a csv file
-      cost_file = "Results/$(instance_name).csv"
+      cost_file = "Results/$(pastaResultados)/$(instance_name).csv"
       if !isfile(cost_file)
          open(cost_file, "w") do file
             write(file, "Cost\n")  # Adiciona um cabeçalho ao arquivo
          end
       end
+      en
       open(cost_file, "a") do file  # Modo de adição
             write(file, string(cost) * "," * string(tround) * "\n")  # Adiciona uma nova linha após o custo
       end
@@ -78,4 +110,5 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
          end
       end
    end
+end
 end

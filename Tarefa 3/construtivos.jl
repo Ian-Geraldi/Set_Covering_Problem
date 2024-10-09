@@ -69,6 +69,26 @@ function randomConst(instance::scpInstance, chrms)
         println("Iteração $i: Custo atual = $cost, Linhas cobertas = $(sum(covered .> 0))")
         i += 1
     end
+
+    # before returning the solution, we check if there are any redundant columns
+    for col = 1:instance.num_col
+        is_redundant = true
+        for line = 1:instance.num_lin
+            if instance.v_times_covered[col] == 1
+                is_redundant = false
+                break
+            end
+        end
+        if is_redundant
+            solution[col] = 0
+            cost -= instance.v_cost[col]
+            for line = 1:instance.num_lin
+                if instance.m_coverage[line, col] == 1
+                    instance.v_times_covered[col] -= 1
+                end
+            end
+        end
+    end
     
     return solution, cost, covered
 end
@@ -91,6 +111,7 @@ function cobreNovaLinha(coluna::Int64, instance::scpInstance)
     return false
 end
 
+# faz o upkeep de selecionar uma matriz e retorna quantas novas linhas foram cobertas ao selecioná-la
 function selectCol(col::Int64, instance::scpInstance, covered::Array{Int64})
     covered_total = 0
     for lin = 1:instance.num_lin

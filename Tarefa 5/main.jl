@@ -12,13 +12,13 @@ using Statistics
 
 include("scpInstance.jl") #scpInstance contém a estrutura de dados da instância
 include("construtivos.jl")
-instance_names = ["IGC1"]
-iterations = 10
+instance_names = ["scp41","scp42","scp51", "scp52", "scp61", "scp62", "scpa1", "scpa2", "scpb1", "scpb2", "scpc1", "scpc2", "scpd1", "scpd2"]
+iterations = 5
 for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_names
    costs = []
    times = []
    for i = 1:iterations
-      instance_file = "Tarefa 3/data/$(instance_name).txt" # instance_file recebe o nome do arquivo da instancia
+      instance_file = "data/$(instance_name).txt" # instance_file recebe o nome do arquivo da instancia
       cod_metodo = 2
 
       instance = scpInstance(instance_file) #instancia recebe os dados lidos pelo construtor scpInstance
@@ -48,6 +48,7 @@ for instance_name in instance_names #para i de 1 ao tamanho do vetor instance_na
          chrms = rand(instance.num_col)   # cria o vetor de chaves aleatorias
          S, cost, v_cobertura = randomConst(instance, chrms) # chama o construtivo aleatorio
       end
+      println("Cobertura: $(v_cobertura)")
 
       totaltime =  time() - startt  #encerra o contador de tempo
       tround = round(totaltime,digits=2)
