@@ -16,8 +16,8 @@ end
 include("scpInstance.jl") #scpInstance contém a estrutura de dados da instância
 include("construtivos.jl")
 instance_names = ["scp41", "scp42", "scp51", "scp52", "scp61", "scp62", "scpa1", "scpa2", "scpb1", "scpb2", "scpc1", "scpc2", "scpd1", "scpd2"]
-cod_metodo = parse(Int64, ARGS[1]) 
-iterations = parse(Int64, ARGS[2]) 
+cod_metodo = parse(Int64, ARGS[1])
+iterations = parse(Int64, ARGS[2])
 if cod_metodo == 1
    pastaResultados = "Construtivo Determinístico"
 end

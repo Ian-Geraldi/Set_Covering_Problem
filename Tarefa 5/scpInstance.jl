@@ -1,4 +1,4 @@
-struct scpInstance #<: AbstractInstance
+struct scpInstance <: AbstractInstance
     num_lin::Int64 #Number of lines
     num_col::Int64  #Number of columns
     v_cost::Array{Int64}#Vector of costs
@@ -33,7 +33,6 @@ struct scpInstance #<: AbstractInstance
         m_coverage = zeros(Int64, num_lin, num_col)
 
         for i = 1:num_lin
-            println("Building the instance... $(i)/$(num_lin) lines done")
             v=v+1
             cl = parse(Int64, values[v])
 
@@ -51,6 +50,16 @@ struct scpInstance #<: AbstractInstance
         #println(m_distances[:,:])
 
         new(num_lin, num_col, v_cost, m_coverage, copy(m_coverage), v_num_covered)
+    end
+    function scpInstance(instance::scpInstance)
+        new(
+            instance.num_lin,
+            instance.num_col,
+            copy(instance.v_cost),
+            copy(instance.m_coverage),
+            copy(instance.m_coverage_starter),
+            copy(instance.v_num_covered)
+        )
     end
 end
 
