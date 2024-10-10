@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Hello World!" 
 # List of file suffixes
 suffixes=("scp41" "scp42" "scp51" "scp52" "scp61" "scp62" "scpa1" "scpa2" "scpb1" "scpb2" "scpc1" "scpc2" "scpd1" "scpd2")
 

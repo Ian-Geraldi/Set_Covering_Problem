@@ -148,10 +148,6 @@ function main(args)
 
     println("\n[$(Dates.Time(Dates.now()))] Generating initial tour...")
 
-    # Generate a greedy solution to be used as warm start for BRKGA.
-    initial_cost = constDeterministico(instance)
-    println("Initial cost: $initial_cost")
-
     ########################################
     # Build the BRKGA data structures and initialize
     ########################################
@@ -161,7 +157,7 @@ function main(args)
     # Usually, it is a good idea to set the population size
     # proportional to the instance size.
     brkga_params.population_size = min(brkga_params.population_size,
-                                       10 * instance.num_col)
+                                       1 * instance.num_col)
     println("New population size: $(brkga_params.population_size)")
 
     # Chromosome size is the number of nodes.

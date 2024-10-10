@@ -22,7 +22,7 @@ function scp_decode!(chromosome::Array{Float64}, instance::scpInstance,
         covered_total += selectCol(coluna, instance, covered)
         i += 1
     end
-    return cost, solution
+    return cost
 end
 
 function selectCol(col::Int64, instance::scpInstance, covered::Array{Int64})
