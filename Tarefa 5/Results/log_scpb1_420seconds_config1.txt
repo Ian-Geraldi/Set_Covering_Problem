@@ -1,0 +1,291 @@
+------------------------------------------------------
+> Experiment started at 2024-10-14T02:17:58.169
+> Instance: data/scpb1.txt
+> Configuration: configs/config1.config
+> Algorithm Parameters:
+>  - population_size 75
+>  - elite_percentage 0.05
+>  - mutants_percentage 0.1
+>  - num_elite_parents 2
+>  - total_parents 3
+>  - bias_type LOGINVERSE
+>  - num_independent_populations 3
+>  - pr_number_pairs 0
+>  - pr_minimum_distance 0.15
+>  - pr_type PERMUTATION
+>  - pr_selection BESTSOLUTION
+>  - alpha_block_size 1.0
+>  - pr_percentage 1.0
+>  - exchange_interval 200
+>  - num_exchange_indivuduals 2
+>  - reset_interval 600
+> Seed: 298329
+> Stop rule: TARGET
+> Stop argument: 0.0
+> Maximum time (s): 420.0
+> Number of parallel threads for decoding: 1
+------------------------------------------------------
+
+[02:17:58.294] Reading SCP data...
+Reading instance
+Instance read
+Number of columns: 3000
+
+[02:17:58.342] Generating initial solution...
+
+[02:17:58.342] Building BRKGA data...
+New population size: 2250
+
+[02:17:58.413] Initializing BRKGA data...
+
+[02:19:11.785] Warming up...
+
+[02:21:39.392] Evolving...
+* Iteration | Cost | CurrentTime
+* 1 | 101 | 70.06 
+[02:29:44.52] End of optimization
+
+Total number of iterations: 7
+Last update iteration: 1
+Total optimization time: 485.13
+Last update time: 70.06
+Large number of iterations between improvements: 1
+Total path relink time: 0.00
+Total path relink calls: 0
+Number of homogenities: 0
+Improvements in the elite set: 0
+Best individual improvements: 0
+
+% Best cost: 101------------------------------------------------------
+> Experiment started at 2024-10-14T02:29:53.692
+> Instance: data/scpb1.txt
+> Configuration: configs/config1.config
+> Algorithm Parameters:
+>  - population_size 75
+>  - elite_percentage 0.05
+>  - mutants_percentage 0.1
+>  - num_elite_parents 2
+>  - total_parents 3
+>  - bias_type LOGINVERSE
+>  - num_independent_populations 3
+>  - pr_number_pairs 0
+>  - pr_minimum_distance 0.15
+>  - pr_type PERMUTATION
+>  - pr_selection BESTSOLUTION
+>  - alpha_block_size 1.0
+>  - pr_percentage 1.0
+>  - exchange_interval 200
+>  - num_exchange_indivuduals 2
+>  - reset_interval 600
+> Seed: 394149
+> Stop rule: TARGET
+> Stop argument: 0.0
+> Maximum time (s): 420.0
+> Number of parallel threads for decoding: 1
+------------------------------------------------------
+
+[02:29:53.824] Reading SCP data...
+Reading instance
+Instance read
+Number of columns: 3000
+
+[02:29:53.874] Generating initial solution...
+
+[02:29:53.874] Building BRKGA data...
+New population size: 2250
+
+[02:29:53.953] Initializing BRKGA data...
+
+[02:31:07.995] Warming up...
+
+[02:33:34.819] Evolving...
+* Iteration | Cost | CurrentTime
+* 1 | 101 | 68.98 
+[02:41:39.338] End of optimization
+
+Total number of iterations: 7
+Last update iteration: 1
+Total optimization time: 484.52
+Last update time: 68.98
+Large number of iterations between improvements: 1
+Total path relink time: 0.00
+Total path relink calls: 0
+Number of homogenities: 0
+Improvements in the elite set: 0
+Best individual improvements: 0
+
+% Best cost: 101------------------------------------------------------
+> Experiment started at 2024-10-14T02:41:48.402
+> Instance: data/scpb1.txt
+> Configuration: configs/config1.config
+> Algorithm Parameters:
+>  - population_size 75
+>  - elite_percentage 0.05
+>  - mutants_percentage 0.1
+>  - num_elite_parents 2
+>  - total_parents 3
+>  - bias_type LOGINVERSE
+>  - num_independent_populations 3
+>  - pr_number_pairs 0
+>  - pr_minimum_distance 0.15
+>  - pr_type PERMUTATION
+>  - pr_selection BESTSOLUTION
+>  - alpha_block_size 1.0
+>  - pr_percentage 1.0
+>  - exchange_interval 200
+>  - num_exchange_indivuduals 2
+>  - reset_interval 600
+> Seed: 492929
+> Stop rule: TARGET
+> Stop argument: 0.0
+> Maximum time (s): 420.0
+> Number of parallel threads for decoding: 1
+------------------------------------------------------
+
+[02:41:48.534] Reading SCP data...
+Reading instance
+Instance read
+Number of columns: 3000
+
+[02:41:48.581] Generating initial solution...
+
+[02:41:48.581] Building BRKGA data...
+New population size: 2250
+
+[02:41:48.652] Initializing BRKGA data...
+
+[02:43:02.488] Warming up...
+
+[02:45:28.382] Evolving...
+* Iteration | Cost | CurrentTime
+* 1 | 101 | 68.97 
+[02:53:35.96] End of optimization
+
+Total number of iterations: 7
+Last update iteration: 1
+Total optimization time: 487.58
+Last update time: 68.97
+Large number of iterations between improvements: 1
+Total path relink time: 0.00
+Total path relink calls: 0
+Number of homogenities: 0
+Improvements in the elite set: 0
+Best individual improvements: 0
+
+% Best cost: 101------------------------------------------------------
+> Experiment started at 2024-10-14T02:53:45.077
+> Instance: data/scpb1.txt
+> Configuration: configs/config1.config
+> Algorithm Parameters:
+>  - population_size 75
+>  - elite_percentage 0.05
+>  - mutants_percentage 0.1
+>  - num_elite_parents 2
+>  - total_parents 3
+>  - bias_type LOGINVERSE
+>  - num_independent_populations 3
+>  - pr_number_pairs 0
+>  - pr_minimum_distance 0.15
+>  - pr_type PERMUTATION
+>  - pr_selection BESTSOLUTION
+>  - alpha_block_size 1.0
+>  - pr_percentage 1.0
+>  - exchange_interval 200
+>  - num_exchange_indivuduals 2
+>  - reset_interval 600
+> Seed: 593929
+> Stop rule: TARGET
+> Stop argument: 0.0
+> Maximum time (s): 420.0
+> Number of parallel threads for decoding: 1
+------------------------------------------------------
+
+[02:53:45.204] Reading SCP data...
+Reading instance
+Instance read
+Number of columns: 3000
+
+[02:53:45.251] Generating initial solution...
+
+[02:53:45.252] Building BRKGA data...
+New population size: 2250
+
+[02:53:45.324] Initializing BRKGA data...
+
+[02:54:58.904] Warming up...
+
+[02:57:23.066] Evolving...
+* Iteration | Cost | CurrentTime
+* 1 | 101 | 69.27 
+[03:05:28.314] End of optimization
+
+Total number of iterations: 7
+Last update iteration: 1
+Total optimization time: 485.25
+Last update time: 69.27
+Large number of iterations between improvements: 1
+Total path relink time: 0.00
+Total path relink calls: 0
+Number of homogenities: 0
+Improvements in the elite set: 0
+Best individual improvements: 0
+
+% Best cost: 101------------------------------------------------------
+> Experiment started at 2024-10-14T03:05:37.437
+> Instance: data/scpb1.txt
+> Configuration: configs/config1.config
+> Algorithm Parameters:
+>  - population_size 75
+>  - elite_percentage 0.05
+>  - mutants_percentage 0.1
+>  - num_elite_parents 2
+>  - total_parents 3
+>  - bias_type LOGINVERSE
+>  - num_independent_populations 3
+>  - pr_number_pairs 0
+>  - pr_minimum_distance 0.15
+>  - pr_type PERMUTATION
+>  - pr_selection BESTSOLUTION
+>  - alpha_block_size 1.0
+>  - pr_percentage 1.0
+>  - exchange_interval 200
+>  - num_exchange_indivuduals 2
+>  - reset_interval 600
+> Seed: 693929
+> Stop rule: TARGET
+> Stop argument: 0.0
+> Maximum time (s): 420.0
+> Number of parallel threads for decoding: 1
+------------------------------------------------------
+
+[03:05:37.562] Reading SCP data...
+Reading instance
+Instance read
+Number of columns: 3000
+
+[03:05:37.61] Generating initial solution...
+
+[03:05:37.61] Building BRKGA data...
+New population size: 2250
+
+[03:05:37.682] Initializing BRKGA data...
+
+[03:06:49.14] Warming up...
+
+[03:09:15.314] Evolving...
+* Iteration | Cost | CurrentTime
+* 1 | 101 | 68.61 
+[03:17:11.978] End of optimization
+
+Total number of iterations: 7
+Last update iteration: 1
+Total optimization time: 476.66
+Last update time: 68.61
+Large number of iterations between improvements: 1
+Total path relink time: 0.00
+Total path relink calls: 0
+Number of homogenities: 0
+Improvements in the elite set: 0
+Best individual improvements: 0
+
+% Best cost: 101

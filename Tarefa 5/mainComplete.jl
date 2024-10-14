@@ -141,12 +141,12 @@ function main(args)
     # Load instance and adjust BRKGA parameters
     ########################################
 
-    println("\n[$(Dates.Time(Dates.now()))] Reading TSP data...")
+    println("\n[$(Dates.Time(Dates.now()))] Reading SCP data...")
 
     instance = scpInstance(instance_file)
-    println("Number of nodes: $(instance.num_col)")
+    println("Number of columns: $(instance.num_col)")
 
-    println("\n[$(Dates.Time(Dates.now()))] Generating initial tour...")
+    println("\n[$(Dates.Time(Dates.now()))] Generating initial solution...")
 
     ########################################
     # Build the BRKGA data structures and initialize
@@ -156,8 +156,7 @@ function main(args)
 
     # Usually, it is a good idea to set the population size
     # proportional to the instance size.
-    brkga_params.population_size = min(brkga_params.population_size,
-                                       1 * instance.num_col)
+    brkga_params.population_size = floor(brkga_params.population_size/100 * instance.num_col)
     println("New population size: $(brkga_params.population_size)")
 
     # Chromosome size is the number of nodes.

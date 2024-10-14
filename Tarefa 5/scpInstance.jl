@@ -7,6 +7,7 @@ struct scpInstance <: AbstractInstance
     v_num_covered::Array{Int64}#Vector of how many are covered
 
     function scpInstance(filename::String)
+        println("Reading instance")
 
         f = open(filename)
         s = read(f, String)
@@ -48,7 +49,7 @@ struct scpInstance <: AbstractInstance
             #println(m_distances[num_nodes,:])
             
         #println(m_distances[:,:])
-
+        println("Instance read")
         new(num_lin, num_col, v_cost, m_coverage, copy(m_coverage), v_num_covered)
     end
     function scpInstance(instance::scpInstance)
