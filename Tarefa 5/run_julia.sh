@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # List of instance files
-configs=("config1" "config2" "config3" "config4" "config5" "config6")
-# instances=("scp41" "scp42" "scp51" "scp52" "scp61" "scp62" "scpa1" "scpa2" "scpb1" "scpb2" "scpc1" "scpc2" "scpd1" "scpd2")
-instances=("scpb1" "scpb2" "scpc1" "scpc2" "scpd1" "scpd2")
-times=("60" "180" "420")
+configs=("config2" "config4" "config5" "config6")
+instances=("scp41" "scp42" "scp51" "scp52" "scp61" "scp62" "scpa1" "scpa2" "scpb1" "scpb2" "scpc1" "scpc2" "scpd1" "scpd2")
+times=("60" "180")
 seeds=("298329" "394149" "492929" "593929" "693929")
 
 # Do jeito que foi pedido levaria 112 horas (14*6*5*(1+5+10)/60). Deixei com 1 e 3 minutos para rodar em 28 (14*6*5*(1+3)/60).
